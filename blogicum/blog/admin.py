@@ -4,12 +4,14 @@ from django.contrib import admin
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('title', 'description', 'slug', 'is_published', 'created_at')
+    list_display = ('title',
+                    'description',
+                    'slug',
+                    'is_published',
+                    'created_at')
 
     class Meta:
-
         verbose_name_plural = 'Категории'
-
 
 
 @admin.register(Location)
@@ -17,7 +19,6 @@ class LocationAdmin(admin.ModelAdmin):
     list_display = ('name', 'is_published', 'created_at')
 
     class Meta:
-
         verbose_name_plural = 'Местоположения'
 
 
@@ -33,7 +34,5 @@ class PostAdmin(admin.ModelAdmin):
                     'is_published',
                     'created_at')
 
-
     class Meta:
-
         verbose_name_plural = 'Публикации'

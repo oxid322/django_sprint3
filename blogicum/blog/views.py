@@ -42,7 +42,9 @@ class CategoryListView(ListView):
         context = super().get_context_data(**kwargs)
         # Get the category based on the slug from URL
         category_slug = self.kwargs.get('category_slug')
-        context['category'] = get_object_or_404(Category, slug=category_slug, is_published=True)
+        context['category'] = get_object_or_404(Category,
+                                                slug=category_slug,
+                                                is_published=True)
         return context
 
 
